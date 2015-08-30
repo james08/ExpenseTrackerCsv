@@ -4,15 +4,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import javax.swing.JOptionPane;
-
-public class CsvTest  {
+public class ExpenseTrackerCsvMain {
 	
 	private DateFormat df = new SimpleDateFormat("dd MMM yyyy");
 	
@@ -20,7 +12,7 @@ public class CsvTest  {
 		//CsvTranHist.getInstance();
 		//launch(args);
 		try {
-			new CsvTest().doIt();
+			new ExpenseTrackerCsvMain().doIt();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -42,19 +42,11 @@ public class CsvTranHist extends Application {
 	
 	private static CsvTranHist instance; 
 	
-	private CsvTranHist() {
-//		this.setTitle("TranHist");
-//		this.setSize(new Dimension(200, 200));
-//		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-//		this.setLocationRelativeTo(null);
-//		this.setVisible(true);
-	}
+	private CsvTranHist() {}
 	
 	public static CsvTranHist getInstance() {
 		if (instance == null) {
 			instance = new CsvTranHist();
-			//instance.checkDataDir();
-			//instance.loadAccounts();
 		}
 		return instance;
 	}
@@ -174,7 +166,6 @@ public class CsvTranHist extends Application {
 	
 	private void categoriseTransaction(TranInfoBean tib) {
 		String description = tib.getDescription().toUpperCase();
-		String cat1 = "NONE";
 		CatMatchKey [] cmks = CAT1_MATCH.keySet().toArray(new CatMatchKey[0]);
 		Arrays.sort(cmks);
 		for (CatMatchKey key : cmks) {
@@ -184,7 +175,6 @@ public class CsvTranHist extends Application {
 				tib.setMatch(matchString);
 			}
 		}
-		String cat2 = "NONE";
 		cmks = (CatMatchKey[]) CAT2_MATCH.keySet().toArray(new CatMatchKey[0]);
 		Arrays.sort(cmks);
 		for (CatMatchKey key : cmks) {
